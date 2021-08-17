@@ -20,7 +20,7 @@ generateBtn.addEventListener("click", writePassword);
 var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var lowercase = "abcdefghijklmnopqrstuvwxyz";
 var numbers = "1234567890";
-var specialChar = " !\"#$%&'()*+,-./:;<=>?@[\\]^_\`{|}~";
+var specialChar = "!\"#$%&'()*+,-./:;<=>?@[\\]^_\`{|}~";
 
 var min = 8
 var max = 128;
@@ -45,10 +45,10 @@ if( userInput<min || userInput>max ){
 
       if(!upperIncluded || !lowerIncluded || !numbersIncluded || !specialsIncluded){
         alert("You have to include some type of character.");
-      }else 
+      }else {
           {passLength = Math.floor(userInput);}
 
-
+      //only one type of character is chosen
     while (upperIncluded || !lowerIncluded || !numbersIncluded || !specialsIncluded){
 
             for (i=1; i<=passLength; i++){
@@ -56,39 +56,51 @@ if( userInput<min || userInput>max ){
               
               password+=uppercase.charAt(charIndex);                
 
-            }
+                }
           }
 
     while (!upperIncluded || lowerIncluded || !numbersIncluded || !specialsIncluded){
 
             for (i=1; i<=passLength; i++){
-                var charIndex = Math.floor( (Math.random()*lowerIncluded.length) + 1);
+                var charIndex = Math.floor( (Math.random()*lowercase.length) + 1);
                 
-                password+=lowerIncluded.charAt(charIndex);          
+                password+=lowercase.charAt(charIndex);          
                 }     
            }
 
     while (!upperIncluded || !lowerIncluded || numbersIncluded || !specialsIncluded){
 
             for (i=1; i<=passLength; i++){
-                var charIndex = Math.floor( (Math.random()*numbersIncluded.length) + 1);
+                var charIndex = Math.floor( (Math.random()*numbers.length) + 1);
                     
-                password+=numbersIncluded.charAt(charIndex);      
+                password+=numbers.charAt(charIndex);      
               }
           }
            
     while (!upperIncluded || !lowerIncluded || !numbersIncluded || specialsIncluded){
 
           for (i=1; i<=passLength; i++){
-              var charIndex = Math.floor( (Math.random()*specialsIncluded.length) + 1);
+              var charIndex = Math.floor( (Math.random()*specialChar.length) + 1);
                       
-              password+=specialsIncluded.charAt(charIndex);             
+              password+=specialChar.charAt(charIndex);             
              }
         }
+        //end only one type of character chosen
 
 
+    while (upperIncluded || lowerIncluded || !numbersIncluded || !specialsIncluded){
+            var newStr = uppercase + lowercase;
+
+            for (i=1; i<=passLength; i++){
+            var charIndex = Math.floor( (Math.random()*newStr.length) + 1);
+                        
+            password+=newStr.charAt(charIndex);             
+                }
+         }
+  
 
 
+}
     
     }
 
