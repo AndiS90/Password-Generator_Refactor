@@ -87,22 +87,75 @@ if( userInput<min || userInput>max ){
         }
         //end only one type of character chosen
 
-
+        //pairs including upperIncluded
     while (upperIncluded || lowerIncluded || !numbersIncluded || !specialsIncluded){
-            var newStr = uppercase + lowercase;
+            var newStr = uppercase + lowercase;  
+        }
 
-            for (i=1; i<=passLength; i++){
-            var charIndex = Math.floor( (Math.random()*newStr.length) + 1);
+
+     while (upperIncluded || !lowerIncluded || numbersIncluded || !specialsIncluded){
+             var newStr = uppercase  + numbers; 
+            }
+
+     while (upperIncluded || !lowerIncluded || !numbersIncluded || specialsIncluded){
+                var newStr = uppercase + specialChar; 
+        }
+        //end pairs including upper included
+
+        //start rest of pairs w/ lower included
+    while (!upperIncluded || lowerIncluded || numbersIncluded || !specialsIncluded){
+            var newStr = lowercase + numbers; 
+        }
+    
+    while (!upperIncluded || lowerIncluded || !numbersIncluded || specialsIncluded){
+        var newStr = lowercase + specialChar; 
+        }
+        // end rest of pairs w/ lower included
+
+        //start last of pairs with numbers and/or special pairs included
+    while (!upperIncluded || !lowerIncluded || numbersIncluded || specialsIncluded){
+        var newStr = numbers + specialChar; 
+        }
+    // end pairs
+
+        //start upperIncluded triples
+    while (upperIncluded || lowerIncluded || numbersIncluded || !specialsIncluded){
+        var newStr = uppercase + lowercase + numbers; 
+        }   
+
+        
+    while (upperIncluded || !lowerIncluded || numbersIncluded || specialsIncluded){
+        var newStr = uppercase + numbers + specialChar; 
+        }
+
+    while (upperIncluded || lowerIncluded || !numbersIncluded || specialsIncluded){
+        var newStr = uppercase + lowercase + specialChar; 
+         }
+        //end upperIncluded triples
+
+         //start rest of lowerIncluded triples
+     while (!upperIncluded || lowerIncluded || numbersIncluded || specialsIncluded){
+         var newStr = lowercase +  numbers + specialChar ; 
+         }   
+         //end triples
+
+         //all included
+    while (upperIncluded || lowerIncluded || numbersIncluded || specialsIncluded){
+        var newStr = uppercase +  lowercase +  numbers + specialChar ; 
+        }     
+
+        //for loop that creates password based on what newStr =
+    for (i=1; i<=passLength; i++){
+         var charIndex = Math.floor( (Math.random()*newStr.length) + 1);
                         
-            password+=newStr.charAt(charIndex);             
-                }
+        password+=newStr.charAt(charIndex);             
+              
          }
   
 
 
 }
-    
-    }
+}
 
 
 
