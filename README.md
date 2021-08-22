@@ -17,10 +17,10 @@ The work on this project reinforced some of the basic necessities of javascript,
 ## Click the links below to access the page and repository respectively.
 <br>
 
- - [Password Generator]()
+ - [Password Generator](https://andis90.github.io/Password-Generator_Refactor/)
 <br>
 
- - [Password Generator Repository]()
+ - [Password Generator Repository](https://github.com/AndiS90/Password-Generator_Refactor)
 <br>
 
 ![Screenshot](./assets/images/screenshot.png)
