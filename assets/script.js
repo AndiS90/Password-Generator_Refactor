@@ -33,8 +33,11 @@ var userInput = prompt("How long would you like your password? \nMust be a numbe
 if( userInput<min || userInput>max ){
 
   alert("Password length must be a number between 8 and 128 characters.")
- 
+
+  generatePassword();
+   
 }else{
+    
 
   var passLength = Math.floor(userInput);  
   var upperIncluded = confirm("Do you want to include uppercase letters?");
@@ -45,11 +48,7 @@ if( userInput<min || userInput>max ){
     if (!upperIncluded && !lowerIncluded && !numbersIncluded && !specialsIncluded){
         alert("You have to include at least one type of character.")
 
-        var upperIncluded = confirm("Do you want to include uppercase letters?");
-        var lowerIncluded = confirm("Do you want to include lowercase letters?");
-        var numbersIncluded = confirm("Do you want to include numbers?");
-        var specialsIncluded = confirm("Do you want to include special characters?");
-
+        generatePassword();
     } else {
 
     var allOptions= [upperIncluded, lowerIncluded, numbersIncluded,specialsIncluded];
@@ -63,7 +62,7 @@ if( userInput<min || userInput>max ){
             }
     }
       
-        newStr = newArray.join(''); //combines the new array elements into one long string
+       var newStr = newArray.join(''); //combines the new array elements into one long string
         //for loop that creates password based on what newStr =
     for (i=1; i<=passLength; i++){
          var charIndex = Math.floor( (Math.random()*newStr.length) + 1);             
