@@ -56,7 +56,7 @@ if( userInput<min || userInput>max ){
         
     var newArray=[]
 
-    //this loop runs through the length of all options, and for whichever is true, it adds the corresponding index to a final array of characters
+    //this loop runs through the length of all options, and for whichever is true, it adds the corresponding index from an array of character options to a final array of characters
     for (i=0; i<(allOptions.length); i++){
 
         if (allOptions[i]) {
